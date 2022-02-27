@@ -1,18 +1,33 @@
-package com.ttn;
+package com.ttn.service;
 
-import static org.junit.Assert.*;
-
+import com.ttn.domain.Order;
 import org.junit.Test;
 
-import com.ttn.service.EmailService;
-
 public class EmailServiceTest {
-	
-	EmailService service = new EmailService();
 
-	@Test
-	public void testSendEmail() {
-		assertTrue(true);
+    //creating spy
+    EmailService eService = spy(EmailService.class);
+
+    @Test
+    public void sendEmailTest_whenWePassEmail(){
+        Order order = mock(Order.class);  
+    }
+
+    private Order mock(Class<Order> class1) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	private EmailService spy(Class<EmailService> class1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Test(expected = RuntimeException.class)
+    public void sendEmailTest_WhenEmailNotPasssed(){
+        Order order = mock(Order.class);
+        eService.sendEmail(order);
+
+    }
 
 }
